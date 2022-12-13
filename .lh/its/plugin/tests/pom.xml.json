@@ -1,0 +1,26 @@
+{
+    "sourceFile": "its/plugin/tests/pom.xml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1670823244650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1670823275180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,15 +24,15 @@\n     </dependency>\n     <dependency>\n       <groupId>org.sonarsource.orchestrator</groupId>\n       <artifactId>sonar-orchestrator</artifactId>\n-      <version>3.10.1</version>\n+      <version>3.40.0.183</version>\n       <scope>test</scope>\n     </dependency>\n     <dependency>\n       <groupId>org.sonarsource.api.plugin</groupId>\n       <artifactId>sonar-plugin-api</artifactId>\n-      <version>3.6</version>\n+      <version>9.13.0.360</version>\n       <scope>test</scope>\n     </dependency>\n     <dependency>\n       <groupId>junit</groupId>\n"
+                },
+                {
+                    "date": 1670823312595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n       <plugins>\n         <plugin>\n           <groupId>org.apache.maven.plugins</groupId>\n           <artifactId>maven-surefire-plugin</artifactId>\n-          <version>3</version>\n+          <version>3.</version>\n           <configuration>\n           <argLine>-server</argLine>\n             <includes>\n               <include>com/sonar/it/java/suite/*TestSuite.java</include>\n"
+                }
+            ],
+            "date": 1670823244650,
+            "name": "Commit-0",
+            "content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\n  <modelVersion>4.0.0</modelVersion>\n\n  <parent>\n    <groupId>com.sonarsource.it</groupId>\n    <artifactId>it-pmd-plugin</artifactId>\n    <version>1.0-SNAPSHOT</version>\n  </parent>\n\n  <artifactId>it-pmd-plugin-tests</artifactId>\n  <name>PMD :: IT :: Plugin :: Tests</name>\n  <properties>\n    <maven.test.redirectTestOutputToFile>true</maven.test.redirectTestOutputToFile>\n  </properties>\n\n  <dependencies>\n    <dependency>\n      <groupId>${pom.groupId}</groupId>\n      <artifactId>it-pmd-plugin-plugins</artifactId>\n      <version>${pom.version}</version>\n      <type>pom</type>\n    </dependency>\n    <dependency>\n      <groupId>org.sonarsource.orchestrator</groupId>\n      <artifactId>sonar-orchestrator</artifactId>\n      <version>3.10.1</version>\n      <scope>test</scope>\n    </dependency>\n    <dependency>\n      <groupId>org.sonarsource.api.plugin</groupId>\n      <artifactId>sonar-plugin-api</artifactId>\n      <version>3.6</version>\n      <scope>test</scope>\n    </dependency>\n    <dependency>\n      <groupId>junit</groupId>\n      <artifactId>junit</artifactId>\n      <version>4.11</version>\n      <scope>test</scope>\n    </dependency>\n    <dependency>\n      <groupId>org.easytesting</groupId>\n      <artifactId>fest-assert</artifactId>\n      <scope>test</scope>\n      <version>1.4</version>\n    </dependency>\n  </dependencies>\n\n  <build>\n    <pluginManagement>\n      <plugins>\n        <plugin>\n          <groupId>org.apache.maven.plugins</groupId>\n          <artifactId>maven-surefire-plugin</artifactId>\n          <configuration>\n          <argLine>-server</argLine>\n            <includes>\n              <include>com/sonar/it/java/suite/*TestSuite.java</include>\n              <include>com/sonar/it/java/*Test.java</include>\n            </includes>\n          </configuration>\n        </plugin>\n      </plugins>\n    </pluginManagement>\n  </build>\n\n</project>\n"
+        }
+    ]
+}

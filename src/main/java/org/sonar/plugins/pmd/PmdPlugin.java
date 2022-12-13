@@ -19,31 +19,27 @@
  */
 package org.sonar.plugins.pmd;
 
-import com.google.common.collect.ImmutableList;
-import org.sonar.api.SonarPlugin;
+import org.sonar.api.Plugin;
 import org.sonar.api.config.PropertyDefinition;
 
-import java.util.List;
+public class PmdPlugin implements Plugin {
 
-public class PmdPlugin extends SonarPlugin {
+    @Override
+    public void define(Context context) {
+        context.addExtension(PropertyDefinition.builder(PmdConfiguration.PROPERTY_GENERATE_XML)
+                .defaultValue("false")
+                .name("Generate XML Report")
+                .hidden()
+                .build());
 
-  @Override
-  public List getExtensions() {
-    return ImmutableList.of(
-      PropertyDefinition.builder(PmdConfiguration.PROPERTY_GENERATE_XML)
-        .defaultValue("false")
-        .name("Generate XML Report")
-        .hidden()
-        .build(),
+        context.addExtension(PmdSensor.class);
 
-      PmdSensor.class,
-      PmdConfiguration.class,
-      PmdExecutor.class,
-      PmdRulesDefinition.class,
-      PmdUnitTestsRulesDefinition.class,
-      PmdProfileExporter.class,
-      PmdProfileImporter.class,
-      PmdViolationRecorder.class);
-  }
-
+        context.addExtension(PmdConfiguration.class);
+        context.addExtension(PmdExecutor.class);
+        context.addExtension(PmdRulesDefinition.class);
+        context.addExtension(PmdUnitTestsRulesDefinition.class);
+        context.addExtension(PmdProfileExporter.class);
+        context.addExtension(PmdProfileImporter.class);
+        context.addExtension(PmdViolationRecorder.class);
+    }
 }

@@ -28,7 +28,9 @@ import org.sonar.api.issue.Issuable;
 import org.sonar.api.issue.Issuable.IssueBuilder;
 import org.sonar.api.rules.Rule;
 import org.sonar.api.rules.RuleFinder;
+import org.sonar.api.scanner.ScannerSide;
 
+@ScannerSide
 public class PmdViolationRecorder implements BatchExtension {
 
   private final FileSystem fs;

@@ -19,7 +19,6 @@
  */
 package org.sonar.plugins.pmd;
 
-import org.junit.Test;
 import org.sonar.api.server.rule.RulesDefinition;
 import org.sonar.api.server.rule.RulesDefinition.Param;
 import org.sonar.api.server.rule.RulesDefinition.Rule;
